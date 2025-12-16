@@ -1,5 +1,770 @@
-<!doctype html>
-<html>
-  <head><title>GitHub Pages</title></head>
-  <body>Hello world</body>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veggiebotics - Premium modular DIY kits for building automated hydroponic growing systems using robotics, sensors, and AI software. Build your own robotic food system.">
+  <meta name="keywords" content="hydroponics, DIY, robotics, automation, smart garden, AI, modular, growing system">
+  <meta name="author" content="Veggiebotics">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Veggiebotics - Build Your Own Robotic Food System">
+  <meta property="og:description" content="Premium modular DIY kits for building automated hydroponic growing systems using robotics, sensors, and AI software.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veggiebotics.se">
+  
+  <title>Veggiebotics - Build Your Own Robotic Food System</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              DEFAULT: '#a3e635',
+              warm: '#fbbf24'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+  
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <span class="text-2xl">🌱</span>
+          <span class="text-xl font-semibold tracking-tight">Veggiebotics</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="kits.html" class="nav-link text-sm font-medium">Kits</a>
+          <a href="software.html" class="nav-link text-sm font-medium">Software</a>
+          <a href="how-it-works.html" class="nav-link text-sm font-medium">How It Works</a>
+          <a href="about.html" class="nav-link text-sm font-medium">About</a>
+          <a href="community.html" class="nav-link text-sm font-medium">Community</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#waitlist" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Join Waitlist</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 bg-neutral-950 md:hidden">
+    <div class="flex flex-col h-full p-6">
+      <div class="flex items-center justify-between mb-8">
+        <a href="/" class="flex items-center space-x-2">
+          <span class="text-2xl">🌱</span>
+          <span class="text-xl font-semibold">Veggiebotics</span>
+        </a>
+        <button id="mobile-menu-close" class="p-2 text-neutral-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <a href="kits.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Kits</a>
+        <a href="software.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Software</a>
+        <a href="how-it-works.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">How It Works</a>
+        <a href="about.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">About</a>
+        <a href="community.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Community</a>
+      </div>
+      <div class="mt-auto">
+        <a href="#waitlist" class="btn-primary block text-center px-5 py-3 rounded-lg">Join Waitlist</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden visible">
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="absolute inset-0 gradient-radial"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-neutral-800/50 border border-neutral-700 text-sm text-neutral-400">
+            <span class="w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span>
+            Early Access Opening Soon
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Build your own
+            <span class="text-gradient">robotic food system</span>
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-neutral-400 max-w-xl leading-relaxed">
+            Premium modular DIY kits for building automated hydroponic systems. 
+            Robotics, sensors, and AI software. Assembly required. Intelligence included.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#waitlist" class="btn-primary px-8 py-4 rounded-lg text-center font-semibold">
+              Join the Waitlist
+            </a>
+            <a href="how-it-works.html" class="btn-secondary px-8 py-4 rounded-lg text-center font-medium">
+              See How It Works
+            </a>
+          </div>
+          
+          <div class="flex items-center space-x-8 pt-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">DIY</div>
+              <div class="text-sm text-neutral-500">Assembly</div>
+            </div>
+            <div class="w-px h-10 bg-neutral-800"></div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">AI</div>
+              <div class="text-sm text-neutral-500">Powered</div>
+            </div>
+            <div class="w-px h-10 bg-neutral-800"></div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">100%</div>
+              <div class="text-sm text-neutral-500">Modular</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Image Placeholder -->
+        <div class="relative">
+          <div class="img-placeholder aspect-square rounded-2xl glow-accent">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-6xl mb-4">🌱</div>
+                <p class="text-neutral-500 text-sm">Modular hydroponic system<br>in modern apartment</p>
+              </div>
+            </div>
+          </div>
+          <!-- Floating elements -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-neutral-900 rounded-xl border border-neutral-800 flex items-center justify-center animate-float">
+            <span class="text-3xl">🤖</span>
+          </div>
+          <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-neutral-900 rounded-xl border border-neutral-800 flex items-center justify-center animate-float delay-300">
+            <span class="text-2xl">📡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Veggiebotics Section -->
+  <section id="what" class="py-24 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">What is Veggiebotics?</h2>
+        <p class="text-lg text-neutral-400 leading-relaxed">
+          Not an appliance. A system. Veggiebotics delivers precision-engineered DIY kits 
+          that let you build, customize, and control your own automated growing environment.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-dark rounded-2xl p-8 transition-all duration-300">
+          <div class="feature-icon mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Precision Hardware</h3>
+          <p class="text-neutral-400">
+            Lab-grade sensors, industrial pumps, and custom PCBs. Every component selected 
+            for reliability and precision.
+          </p>
+        </div>
+        
+        <div class="card-dark rounded-2xl p-8 transition-all duration-300">
+          <div class="feature-icon mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Software Control</h3>
+          <p class="text-neutral-400">
+            Veggiebotics OS gives you full control. Monitor, automate, and optimize 
+            through our dashboard or API.
+          </p>
+        </div>
+        
+        <div class="card-dark rounded-2xl p-8 transition-all duration-300">
+          <div class="feature-icon mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">AI Intelligence</h3>
+          <p class="text-neutral-400">
+            Machine learning models predict growth, optimize nutrients, and detect 
+            issues before they become problems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why DIY Section -->
+  <section id="why-diy" class="py-24 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            Assembly is a feature,<br>
+            <span class="text-neutral-500">not a limitation</span>
+          </h2>
+          <div class="space-y-6 text-neutral-400">
+            <p class="text-lg leading-relaxed">
+              We intentionally design everything as DIY kits. When you build it yourself, 
+              you understand it completely. When you understand it, you can customize it, 
+              repair it, and upgrade it.
+            </p>
+            <p class="text-lg leading-relaxed">
+              No black boxes. No planned obsolescence. No warranty-voiding modifications. 
+              Your system, your control.
+            </p>
+          </div>
+          
+          <div class="mt-10 space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">Full Understanding</h4>
+                <p class="text-sm text-neutral-500">Know every component in your system</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">Infinite Customization</h4>
+                <p class="text-sm text-neutral-500">Modify and expand without restrictions</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white">Builder Satisfaction</h4>
+                <p class="text-sm text-neutral-500">The pride of building something real</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Image Placeholder -->
+        <div class="img-placeholder aspect-[4/3] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-5xl mb-4">🔧</div>
+              <p class="text-neutral-500 text-sm">Builder hands assembling<br>components with precision</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modular Kits Overview -->
+  <section id="kits-overview" class="py-24 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Modular Kits</h2>
+        <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
+          Start small, scale up. Every kit is designed to integrate seamlessly with others.
+          Designed to be built. Designed to be upgraded.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Starter Kit -->
+        <div class="kit-card card-dark rounded-2xl p-6 transition-all duration-300">
+          <div class="text-3xl mb-4">📦</div>
+          <h3 class="text-lg font-semibold mb-2">Starter Kit</h3>
+          <p class="text-sm text-neutral-400 mb-4">
+            Everything you need to build your first automated growing system.
+          </p>
+          <div class="text-sm text-neutral-500">From €299</div>
+        </div>
+        
+        <!-- Automation Kit -->
+        <div class="kit-card card-dark rounded-2xl p-6 transition-all duration-300">
+          <div class="text-3xl mb-4">⚡</div>
+          <h3 class="text-lg font-semibold mb-2">Automation Kit</h3>
+          <p class="text-sm text-neutral-400 mb-4">
+            Sensors, controllers, and pumps for hands-free nutrient management.
+          </p>
+          <div class="text-sm text-neutral-500">From €199</div>
+        </div>
+        
+        <!-- Vision Kit -->
+        <div class="kit-card card-dark rounded-2xl p-6 transition-all duration-300">
+          <div class="text-3xl mb-4">👁️</div>
+          <h3 class="text-lg font-semibold mb-2">Vision / AI Kit</h3>
+          <p class="text-sm text-neutral-400 mb-4">
+            Camera modules and ML software for plant health monitoring.
+          </p>
+          <div class="text-sm text-neutral-500">From €149</div>
+        </div>
+        
+        <!-- Robotics Add-ons -->
+        <div class="kit-card card-dark rounded-2xl p-6 transition-all duration-300">
+          <div class="text-3xl mb-4">🤖</div>
+          <h3 class="text-lg font-semibold mb-2">Robotics Add-Ons</h3>
+          <p class="text-sm text-neutral-400 mb-4">
+            Actuators, rails, and controllers for automated harvesting.
+          </p>
+          <div class="text-sm text-neutral-500">From €249</div>
+        </div>
+      </div>
+      
+      <div class="mt-10 text-center">
+        <p class="text-sm text-neutral-500 mb-6">
+          All products are DIY kits requiring assembly. No pre-assembled products available.
+        </p>
+        <a href="kits.html" class="btn-secondary inline-flex items-center px-6 py-3 rounded-lg">
+          View All Kits
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Platform -->
+  <section id="software" class="py-24 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Dashboard Preview -->
+        <div class="order-2 lg:order-1">
+          <div class="img-placeholder aspect-video rounded-2xl border border-neutral-800">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-5xl mb-4">📊</div>
+                <p class="text-neutral-500 text-sm">Dashboard UI mockup<br>Dark mode interface</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-sm text-accent mb-6">
+            <span class="font-mono">Veggiebotics OS</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            Software that grows<br>
+            <span class="text-neutral-500">with your system</span>
+          </h2>
+          
+          <div class="space-y-6 text-neutral-400">
+            <p class="text-lg leading-relaxed">
+              Our software platform connects all your modules into a unified control center.
+              Monitor conditions, automate schedules, and let AI optimize your grows.
+            </p>
+          </div>
+          
+          <div class="mt-8 space-y-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <span>Real-time monitoring dashboard</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <span>Automated schedules and alerts</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <span>AI-powered growth predictions</span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <span>Full API access for developers</span>
+            </div>
+          </div>
+          
+          <div class="mt-10">
+            <a href="software.html" class="btn-secondary inline-flex items-center px-6 py-3 rounded-lg">
+              Explore Software
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Section -->
+  <section id="lifestyle" class="py-24 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Designed for modern living</h2>
+        <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
+          Looks like high-end consumer tech, not agriculture equipment.
+          Clean lines. Hidden cables. Warm grow lights that complement your space.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="img-placeholder aspect-[3/4] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="text-4xl mb-2">🏠</div>
+              <p class="text-neutral-500 text-xs">Living room<br>integration</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="img-placeholder aspect-[3/4] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="text-4xl mb-2">🍳</div>
+              <p class="text-neutral-500 text-xs">Kitchen<br>placement</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="img-placeholder aspect-[3/4] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="text-4xl mb-2">💡</div>
+              <p class="text-neutral-500 text-xs">Warm grow<br>lights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section id="community" class="py-24 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+            Build together,<br>
+            <span class="text-neutral-500">grow together</span>
+          </h2>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Join a community of builders sharing configurations, growing tips, 
+            and custom modifications. API-first ecosystem means endless possibilities.
+          </p>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="card-dark rounded-xl p-4">
+              <div class="text-2xl mb-2">📝</div>
+              <h4 class="font-semibold mb-1">Build Logs</h4>
+              <p class="text-sm text-neutral-500">Document and share your setup</p>
+            </div>
+            
+            <div class="card-dark rounded-xl p-4">
+              <div class="text-2xl mb-2">⚙️</div>
+              <h4 class="font-semibold mb-1">Shared Configs</h4>
+              <p class="text-sm text-neutral-500">Import proven growing profiles</p>
+            </div>
+            
+            <div class="card-dark rounded-xl p-4">
+              <div class="text-2xl mb-2">🛒</div>
+              <h4 class="font-semibold mb-1">Marketplace</h4>
+              <p class="text-sm text-neutral-500">Community add-ons coming soon</p>
+            </div>
+            
+            <div class="card-dark rounded-xl p-4">
+              <div class="text-2xl mb-2">🔌</div>
+              <h4 class="font-semibold mb-1">API Access</h4>
+              <p class="text-sm text-neutral-500">Build your own integrations</p>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <a href="community.html" class="btn-secondary inline-flex items-center px-6 py-3 rounded-lg">
+              Join Community
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="img-placeholder aspect-square rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-5xl mb-4">👥</div>
+              <p class="text-neutral-500 text-sm">Community of<br>builders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Overview -->
+  <section id="pricing" class="py-24 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">Simple, transparent pricing</h2>
+        <p class="text-lg text-neutral-400 max-w-2xl mx-auto">
+          Hardware kits are one-time purchases. Software is free to start, 
+          with optional premium features.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Hardware -->
+        <div class="card-dark rounded-2xl p-8">
+          <div class="text-sm text-neutral-500 uppercase tracking-wide mb-2">Hardware Kits</div>
+          <div class="text-3xl font-bold mb-2">€149 – €799</div>
+          <p class="text-neutral-400 mb-6">One-time purchase</p>
+          <ul class="space-y-3 text-sm text-neutral-400">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              All components included
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Detailed assembly guide
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Modular upgrades
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Software Free -->
+        <div class="card-dark rounded-2xl p-8 pricing-popular">
+          <div class="text-sm text-neutral-500 uppercase tracking-wide mb-2">Software</div>
+          <div class="text-3xl font-bold mb-2">Free</div>
+          <p class="text-neutral-400 mb-6">Core features included</p>
+          <ul class="space-y-3 text-sm text-neutral-400">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Dashboard access
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Basic automation
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Community access
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Software Pro -->
+        <div class="card-dark rounded-2xl p-8">
+          <div class="text-sm text-neutral-500 uppercase tracking-wide mb-2">Software Pro</div>
+          <div class="text-3xl font-bold mb-2">€9/mo</div>
+          <p class="text-neutral-400 mb-6">Advanced features</p>
+          <ul class="space-y-3 text-sm text-neutral-400">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              AI predictions
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Vision analytics
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Priority support
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Waitlist Section -->
+  <section id="waitlist" class="py-24 bg-neutral-900/30">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+        Smart food, built not bought
+      </h2>
+      <p class="text-lg text-neutral-400 mb-10 leading-relaxed">
+        Join the waitlist for early access to Veggiebotics kits and be the first 
+        to build your own robotic growing system.
+      </p>
+      
+      <form class="waitlist-form max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="flex-1 px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 focus:border-accent focus:outline-none"
+            required
+          >
+          <button 
+            type="submit" 
+            class="btn-primary px-6 py-3 rounded-lg font-semibold whitespace-nowrap"
+          >
+            Join Waitlist
+          </button>
+        </div>
+        <p class="text-xs text-neutral-600 mt-3">
+          No spam. We'll only email you about early access and launch updates.
+        </p>
+      </form>
+      
+      <div class="mt-16 flex items-center justify-center space-x-8 text-neutral-600">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-neutral-400">2,500+</div>
+          <div class="text-sm">On waitlist</div>
+        </div>
+        <div class="w-px h-8 bg-neutral-800"></div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-neutral-400">Q2 2025</div>
+          <div class="text-sm">Expected launch</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <a href="/" class="flex items-center space-x-2 mb-4">
+            <span class="text-2xl">🌱</span>
+            <span class="text-xl font-semibold">Veggiebotics</span>
+          </a>
+          <p class="text-neutral-500 max-w-sm mb-6">
+            Premium modular DIY kits for building automated hydroponic growing systems.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-500 hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-500 hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Product</h4>
+          <ul class="space-y-2 text-neutral-500">
+            <li><a href="kits.html" class="hover:text-white transition-colors">Kits</a></li>
+            <li><a href="software.html" class="hover:text-white transition-colors">Software</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+            <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-neutral-500">
+            <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="community.html" class="hover:text-white transition-colors">Community</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center text-sm text-neutral-600">
+        <p>&copy; 2025 Veggiebotics. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Veggiebotics works - Step-by-step guide to choosing, building, connecting, and growing with your automated hydroponic system.">
+  <title>How It Works - Veggiebotics</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: { DEFAULT: '#a3e635', warm: '#fbbf24' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+  
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="/" class="flex items-center space-x-2">
+          <span class="text-2xl">🌱</span>
+          <span class="text-xl font-semibold tracking-tight">Veggiebotics</span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="kits.html" class="nav-link text-sm font-medium">Kits</a>
+          <a href="software.html" class="nav-link text-sm font-medium">Software</a>
+          <a href="how-it-works.html" class="nav-link active text-sm font-medium">How It Works</a>
+          <a href="about.html" class="nav-link text-sm font-medium">About</a>
+          <a href="community.html" class="nav-link text-sm font-medium">Community</a>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="index.html#waitlist" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Join Waitlist</a>
+        </div>
+        
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 bg-neutral-950 md:hidden">
+    <div class="flex flex-col h-full p-6">
+      <div class="flex items-center justify-between mb-8">
+        <a href="/" class="flex items-center space-x-2">
+          <span class="text-2xl">🌱</span>
+          <span class="text-xl font-semibold">Veggiebotics</span>
+        </a>
+        <button id="mobile-menu-close" class="p-2 text-neutral-400 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <a href="kits.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Kits</a>
+        <a href="software.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Software</a>
+        <a href="how-it-works.html" class="text-lg font-medium text-white py-2">How It Works</a>
+        <a href="about.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">About</a>
+        <a href="community.html" class="text-lg font-medium text-neutral-300 hover:text-white py-2">Community</a>
+      </div>
+      <div class="mt-auto">
+        <a href="index.html#waitlist" class="btn-primary block text-center px-5 py-3 rounded-lg">Join Waitlist</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 visible">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6">How It Works</h1>
+        <p class="text-xl text-neutral-400 leading-relaxed">
+          From unboxing to harvest in five steps. Every kit includes detailed assembly 
+          guides, and our software walks you through setup. Building is part of the experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Steps -->
+  <section class="py-8 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-4 lg:gap-8">
+        <a href="#step-1" class="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
+          <span class="step-number">1</span>
+          <span class="hidden sm:inline">Choose</span>
+        </a>
+        <span class="text-neutral-700 self-center">→</span>
+        <a href="#step-2" class="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
+          <span class="step-number">2</span>
+          <span class="hidden sm:inline">Build</span>
+        </a>
+        <span class="text-neutral-700 self-center">→</span>
+        <a href="#step-3" class="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
+          <span class="step-number">3</span>
+          <span class="hidden sm:inline">Connect</span>
+        </a>
+        <span class="text-neutral-700 self-center">→</span>
+        <a href="#step-4" class="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
+          <span class="step-number">4</span>
+          <span class="hidden sm:inline">Grow</span>
+        </a>
+        <span class="text-neutral-700 self-center">→</span>
+        <a href="#step-5" class="flex items-center space-x-2 text-neutral-400 hover:text-white transition-colors">
+          <span class="step-number">5</span>
+          <span class="hidden sm:inline">Optimize</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 1: Choose -->
+  <section id="step-1" class="py-20 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center space-x-4 mb-6">
+            <span class="step-number text-xl w-12 h-12">1</span>
+            <h2 class="text-3xl font-bold">Choose Your Modules</h2>
+          </div>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Start with the Starter Kit or build a custom configuration. Every module 
+            is designed to work together, so you can start small and expand over time.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="card-dark rounded-xl p-4">
+              <h4 class="font-semibold mb-1">First-time builders</h4>
+              <p class="text-sm text-neutral-500">
+                Start with the Starter Kit. It includes everything for your first grow, 
+                with clear upgrade paths when you're ready.
+              </p>
+            </div>
+            
+            <div class="card-dark rounded-xl p-4">
+              <h4 class="font-semibold mb-1">Experienced makers</h4>
+              <p class="text-sm text-neutral-500">
+                Choose individual modules based on your existing setup. Our components 
+                use standard interfaces and protocols.
+              </p>
+            </div>
+            
+            <div class="card-dark rounded-xl p-4">
+              <h4 class="font-semibold mb-1">Maximum automation</h4>
+              <p class="text-sm text-neutral-500">
+                Bundle Starter + Automation + Vision for a fully automated system 
+                with AI monitoring from day one.
+              </p>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <a href="kits.html" class="btn-secondary inline-flex items-center px-6 py-3 rounded-lg">
+              Browse Kits
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="img-placeholder aspect-[4/3] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4">📦</div>
+              <p class="text-neutral-500 text-sm">Kit selection<br>overview</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: Build -->
+  <section id="step-2" class="py-20 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="img-placeholder aspect-[4/3] rounded-2xl">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-6xl mb-4">🔧</div>
+                <p class="text-neutral-500 text-sm">Hands assembling<br>components</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="flex items-center space-x-4 mb-6">
+            <span class="step-number text-xl w-12 h-12">2</span>
+            <h2 class="text-3xl font-bold">Build Your System</h2>
+          </div>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Follow our step-by-step assembly guides. No specialized tools required. 
+            Most builds complete in 2-4 hours. This is where the satisfaction begins.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Detailed Instructions</h4>
+                <p class="text-sm text-neutral-500">
+                  Illustrated guides with step-by-step photos. QR codes link to video 
+                  walkthroughs for complex assemblies.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Modular Architecture</h4>
+                <p class="text-sm text-neutral-500">
+                  Snap-fit connections and standardized mounts. No soldering for basic 
+                  builds, optional for advanced customization.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Community Support</h4>
+                <p class="text-sm text-neutral-500">
+                  Stuck? Post in our community forum. Experienced builders and our 
+                  team are ready to help.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 p-4 rounded-lg bg-neutral-800/50 border border-neutral-700">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <div>
+                <span class="font-semibold">Estimated build time:</span>
+                <span class="text-neutral-400"> 2-4 hours for Starter Kit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: Connect -->
+  <section id="step-3" class="py-20 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center space-x-4 mb-6">
+            <span class="step-number text-xl w-12 h-12">3</span>
+            <h2 class="text-3xl font-bold">Connect to Software</h2>
+          </div>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Power on, connect to WiFi, and your system appears in the dashboard. 
+            Initial setup takes about 5 minutes. The software guides you through 
+            sensor calibration and first-grow configuration.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center space-x-4 p-4 rounded-xl bg-neutral-800/50 border border-neutral-700">
+              <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center text-accent font-semibold">1</div>
+              <div>
+                <h4 class="font-semibold">Power On</h4>
+                <p class="text-sm text-neutral-500">Connect to power, LED indicates ready status</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4 p-4 rounded-xl bg-neutral-800/50 border border-neutral-700">
+              <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center text-accent font-semibold">2</div>
+              <div>
+                <h4 class="font-semibold">WiFi Setup</h4>
+                <p class="text-sm text-neutral-500">Connect to temporary hotspot, enter your WiFi credentials</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4 p-4 rounded-xl bg-neutral-800/50 border border-neutral-700">
+              <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center text-accent font-semibold">3</div>
+              <div>
+                <h4 class="font-semibold">Claim Device</h4>
+                <p class="text-sm text-neutral-500">Log into dashboard, scan QR code to link device</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4 p-4 rounded-xl bg-neutral-800/50 border border-neutral-700">
+              <div class="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center text-accent font-semibold">4</div>
+              <div>
+                <h4 class="font-semibold">Calibrate</h4>
+                <p class="text-sm text-neutral-500">Follow guided calibration for sensors (5 min)</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="software.html" class="btn-secondary inline-flex items-center px-6 py-3 rounded-lg">
+            Explore Software
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="img-placeholder aspect-[4/3] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4">📱</div>
+              <p class="text-neutral-500 text-sm">Device setup<br>on mobile</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 4: Grow -->
+  <section id="step-4" class="py-20 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="img-placeholder aspect-[4/3] rounded-2xl">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-6xl mb-4">🌿</div>
+                <p class="text-neutral-500 text-sm">Healthy plants under<br>grow lights</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="flex items-center space-x-4 mb-6">
+            <span class="step-number text-xl w-12 h-12">4</span>
+            <h2 class="text-3xl font-bold">Start Growing</h2>
+          </div>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Select a grow profile or create your own. Add seeds or seedlings, 
+            and let the system handle the rest. Monitor progress from anywhere.
+          </p>
+          
+          <div class="space-y-6 mb-8">
+            <div>
+              <h4 class="font-semibold mb-2">Pre-loaded Grow Profiles</h4>
+              <p class="text-sm text-neutral-500 mb-3">
+                Optimized settings for common crops, created by experienced growers.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Leafy Greens</span>
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Herbs</span>
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Microgreens</span>
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Tomatoes</span>
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Peppers</span>
+                <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm text-neutral-300">Strawberries</span>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-2">What the System Manages</h4>
+              <ul class="space-y-2 text-sm text-neutral-400">
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Light schedules (photoperiod)
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Nutrient dosing (with Automation Kit)
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  pH and EC balancing
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Water level monitoring
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  Temperature and humidity alerts
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="p-4 rounded-lg bg-accent/10 border border-accent/20">
+            <p class="text-sm text-accent">
+              <span class="font-semibold">First harvest:</span> Most leafy greens ready in 3-4 weeks
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 5: Optimize -->
+  <section id="step-5" class="py-20 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center space-x-4 mb-6">
+            <span class="step-number text-xl w-12 h-12">5</span>
+            <h2 class="text-3xl font-bold">Optimize & Expand</h2>
+          </div>
+          
+          <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+            Review grow logs, compare results, and refine your approach. 
+            Add modules as you learn. Share configurations with the community.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Analyze Results</h4>
+                <p class="text-sm text-neutral-500">
+                  Review historical data, identify patterns, and compare grows. 
+                  AI suggestions highlight optimization opportunities.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Fine-tune Parameters</h4>
+                <p class="text-sm text-neutral-500">
+                  Adjust nutrient ratios, light intensity, and schedules based on data.
+                  Small changes, measurable results.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Add Modules</h4>
+                <p class="text-sm text-neutral-500">
+                  Upgrade to automation, add vision capabilities, or expand capacity.
+                  The system grows with you.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-1">Share & Learn</h4>
+                <p class="text-sm text-neutral-500">
+                  Export your grow profiles, share with the community, and import 
+                  configurations from experienced growers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="img-placeholder aspect-[4/3] rounded-2xl">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-6xl mb-4">📈</div>
+              <p class="text-neutral-500 text-sm">Analytics and<br>optimization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builder Satisfaction -->
+  <section class="py-20 border-t border-neutral-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">The builder's satisfaction</h2>
+      <p class="text-lg text-neutral-400 leading-relaxed mb-8">
+        There's something different about food you grew yourself, in a system you built yourself. 
+        It's smarter than store-bought. It's healthier. And you know exactly how it works.
+      </p>
+      <blockquote class="text-xl italic text-neutral-300 border-l-2 border-accent pl-6 text-left">
+        "I built this myself."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-neutral-900/30">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to start building?</h2>
+      <p class="text-neutral-400 mb-8">
+        Join the waitlist to be first in line when kits ship.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index.html#waitlist" class="btn-primary px-8 py-4 rounded-lg font-semibold">
+          Join the Waitlist
+        </a>
+        <a href="kits.html" class="btn-secondary px-8 py-4 rounded-lg font-medium">
+          View Kits
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <a href="/" class="flex items-center space-x-2 mb-4">
+            <span class="text-2xl">🌱</span>
+            <span class="text-xl font-semibold">Veggiebotics</span>
+          </a>
+          <p class="text-neutral-500 max-w-sm">
+            Premium modular DIY kits for building automated hydroponic growing systems.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Product</h4>
+          <ul class="space-y-2 text-neutral-500">
+            <li><a href="kits.html" class="hover:text-white transition-colors">Kits</a></li>
+            <li><a href="software.html" class="hover:text-white transition-colors">Software</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-neutral-500">
+            <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="community.html" class="hover:text-white transition-colors">Community</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center text-sm text-neutral-600">
+        <p>&copy; 2025 Veggiebotics. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
